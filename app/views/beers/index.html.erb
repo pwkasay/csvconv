@@ -7,7 +7,7 @@
 <table>
   <thead>
     <tr>
-      <th>Sales Order Number</th>
+      <th>Order Number</th>
       <th>Variant SKU</th>
       <th>Item Product</th>
       <th>Item Name</th>
@@ -59,52 +59,53 @@
   <tbody>
     <% @beers.each do |beer| %>
       <tr>
-        <td><%= beer.order_number %></td>
-        <td><%= beer.sku %></td>
-        <td><%= beer.item_product %></td>
-        <td><%= beer.item_name %></td>
-        <td><%= beer.item_label %></td>
-        <td><%= beer.item_upc %></td>
-        <td><%= beer.item_quantity %></td>
-        <td><%= beer.item_price %></td>
-        <td><%= beer.discount_percentage %></td>
-        <td><%= beer.tax_rate %></td>
-        <td><%= beer.item_position %></td>
-        <td><%= beer.packed_date %></td>
-        <td><%= beer.shipped_date %></td>
-        <td><%= beer.currency %></td>
-        <td><%= beer.warehouse %></td>
-        <td><%= beer.assignee %></td>
-        <td><%= beer.notes %></td>
-        <td><%= beer.email %></td>
-        <td><%= beer.contact_name %></td>
-        <td><%= beer.company_name %></td>
-        <td><%= beer.company_code %></td>
-        <td><%= beer.tax_number %></td>
-        <td><%= beer.fax %></td>
-        <td><%= beer.shipping_address_name %></td>
-        <td><%= beer.shipping_address_company_name %></td>
-        <td><%= beer.shipping_address_line_1 %></td>
-        <td><%= beer.shipping_address_line_2 %></td>
-        <td><%= beer.shipping_address_suburb %></td>
-        <td><%= beer.shipping_address_city %></td>
-        <td><%= beer.shipping_address_state %></td>
-        <td><%= beer.shipping_address_country %></td>
-        <td><%= beer.shipping_address_zipcode %></td>
-        <td><%= beer.shipping_address_email %></td>
-        <td><%= beer.shipping_address_phone_number%></td>
-        <td><%= beer.billing_address_name %></td>
-        <td><%= beer.billing_address_company_name %></td>
-        <td><%= beer.billing_address_line_1 %></td>
-        <td><%= beer.billing_address_line_2 %></td>
-        <td><%= beer.billing_address_suburb %></td>
-        <td><%= beer.billing_address_city %></td>
-        <td><%= beer.billing_address_state %></td>
-        <td><%= beer.billing_address_country %></td>
-        <td><%= beer.billing_address_zipcode %></td>
-        <td><%= beer.billing_address_email %></td>
-        <td><%= beer.billing_address_phone_number%></td>
-        <td><%= beer.order_reference %></td>
+        <td><%= beer.Sales_Order_Number %></td>
+        <td><%= beer.Variant_SKU %></td>
+        <td><%= beer.Item_Product %></td>
+        <td><%= beer.Item_Name %></td>
+        <td><%= beer.Item_Label %></td>
+        <td><%= beer.Item_UPC %></td>
+        <td><%= beer.Item_Quantity %></td>
+        <td><%= beer.Item_Price %></td>
+        <td><%= beer.Item_Discount_Percentage %></td>
+        <td><%= beer.Item_Discounted_Price %></td>
+        <td><%= beer.Item_Tax_Rate %></td>
+        <td><%= beer.Item_Position %></td>
+        <td><%= beer.Packed_Date %></td>
+        <td><%= beer.Shipped_Date %></td>
+        <td><%= beer.Currency %></td>
+        <td><%= beer.Warehouse %></td>
+        <td><%= beer.Assignee %></td>
+        <td><%= beer.Fulfillment_Notes %></td>
+        <td><%= beer.Email %></td>
+        <td><%= beer.Contact_Name %></td>
+        <td><%= beer.Company_Name %></td>
+        <td><%= beer.Company_Code %></td>
+        <td><%= beer.Company_Tax_Number %></td>
+        <td><%= beer.Company_Fax %></td>
+        <td><%= beer.Shipping_Address_Name %></td>
+        <td><%= beer.Shipping_Address_Company_Name %></td>
+        <td><%= beer.Shipping_Address_Line_1 %></td>
+        <td><%= beer.Shipping_Address_Line_2 %></td>
+        <td><%= beer.Shipping_Address_Suburb %></td>
+        <td><%= beer.Shipping_Address_City %></td>
+        <td><%= beer.Shipping_Address_State %></td>
+        <td><%= beer.Shipping_Address_Country %></td>
+        <td><%= beer.Shipping_Address_Zip_Code %></td>
+        <td><%= beer.Shipping_Address_Email %></td>
+        <td><%= beer.Shipping_Address_Phone_Number%></td>
+        <td><%= beer.Billing_Address_Name %></td>
+        <td><%= beer.Billing_Address_Company_Name %></td>
+        <td><%= beer.Billing_Address_Line_1 %></td>
+        <td><%= beer.Billing_Address_Line_2 %></td>
+        <td><%= beer.Billing_Address_Suburb %></td>
+        <td><%= beer.Billing_Address_City %></td>
+        <td><%= beer.Billing_Address_State %></td>
+        <td><%= beer.Billing_Address_Country %></td>
+        <td><%= beer.Billing_Address_Zip_Code %></td>
+        <td><%= beer.Billing_Address_Email %></td>
+        <td><%= beer.Billing_Address_Phone_Number%></td>
+        <td><%= beer.Order_Reference %></td>
       </tr>
     <% end %>
   </tbody>
