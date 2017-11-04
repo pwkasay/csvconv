@@ -1,0 +1,119 @@
+<h1>Beers#index</h1>
+<p>Find me in app/views/beers/index.html.erb</p>
+
+<h1>BBNO CONVERTER</h1>
+
+<%= flash[:notice] %>
+<table>
+  <thead>
+    <tr>
+      <th>Sales Order Number</th>
+      <th>Variant SKU</th>
+      <th>Item Product</th>
+      <th>Item Name</th>
+      <th>Item Label</th>
+      <th>Item UPC</th>
+      <th>Item Quantity</th>
+      <th>Item Price</th>
+      <th>Item Discount Percentage</th>
+      <th>Item Discounted Price</th>
+      <th>Item Tax Rate</th>
+      <th>Item Position</th>
+      <th>Packed Date</th>
+      <th>Shipped Date</th>
+      <th>Currency</th>
+      <th>Warehouse</th>
+      <th>Assignee</th>
+      <th>Fulfillment Notes</th>
+      <th>Email</th>
+      <th>Email</th>
+      <th>Company Name</th>
+      <th>Company Code</th>
+      <th>Company Tax Number</th>
+      <th>Company Fax</th>
+      <th>Shipping Address Name</th>
+      <th>Shipping Address Company Name</th>
+      <th>Shipping Address Line 1</th>
+      <th>Shipping Address Line 2</th>
+      <th>Shipping Address Suburb</th>
+      <th>Shipping Address City</th>
+      <th>Shipping Address State</th>
+      <th>Shipping Address Country</th>
+      <th>Shipping Address Zip Code</th>
+      <th>Shipping Address Email</th>
+      <th>Shipping Address Phone Number</th>
+      <th>Billing Address Name</th>
+      <th>Billing Address Company Name</th>
+      <th>Billing Address Line 1</th>
+      <th>Billing Address Line 2</th>
+      <th>Billing Address Suburb</th>
+      <th>Billing Address City</th>
+      <th>Billing Address State</th>
+      <th>Billing Address Country</th>
+      <th>Billing Address Zip Code</th>
+      <th>Billing Address Email</th>
+      <th>Billing Address Phone Number</th>
+      <th>Order Reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @beers.each do |beer| %>
+      <tr>
+        <td><%= beer.order_number %></td>
+        <td><%= beer.sku %></td>
+        <td><%= beer.item_product %></td>
+        <td><%= beer.item_name %></td>
+        <td><%= beer.item_label %></td>
+        <td><%= beer.item_upc %></td>
+        <td><%= beer.item_quantity %></td>
+        <td><%= beer.item_price %></td>
+        <td><%= beer.discount_percentage %></td>
+        <td><%= beer.tax_rate %></td>
+        <td><%= beer.item_position %></td>
+        <td><%= beer.packed_date %></td>
+        <td><%= beer.shipped_date %></td>
+        <td><%= beer.currency %></td>
+        <td><%= beer.warehouse %></td>
+        <td><%= beer.assignee %></td>
+        <td><%= beer.notes %></td>
+        <td><%= beer.email %></td>
+        <td><%= beer.contact_name %></td>
+        <td><%= beer.company_name %></td>
+        <td><%= beer.company_code %></td>
+        <td><%= beer.tax_number %></td>
+        <td><%= beer.fax %></td>
+        <td><%= beer.shipping_address_name %></td>
+        <td><%= beer.shipping_address_company_name %></td>
+        <td><%= beer.shipping_address_line_1 %></td>
+        <td><%= beer.shipping_address_line_2 %></td>
+        <td><%= beer.shipping_address_suburb %></td>
+        <td><%= beer.shipping_address_city %></td>
+        <td><%= beer.shipping_address_state %></td>
+        <td><%= beer.shipping_address_country %></td>
+        <td><%= beer.shipping_address_zipcode %></td>
+        <td><%= beer.shipping_address_email %></td>
+        <td><%= beer.shipping_address_phone_number%></td>
+        <td><%= beer.billing_address_name %></td>
+        <td><%= beer.billing_address_company_name %></td>
+        <td><%= beer.billing_address_line_1 %></td>
+        <td><%= beer.billing_address_line_2 %></td>
+        <td><%= beer.billing_address_suburb %></td>
+        <td><%= beer.billing_address_city %></td>
+        <td><%= beer.billing_address_state %></td>
+        <td><%= beer.billing_address_country %></td>
+        <td><%= beer.billing_address_zipcode %></td>
+        <td><%= beer.billing_address_email %></td>
+        <td><%= beer.billing_address_phone_number%></td>
+        <td><%= beer.order_reference %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+<h4>Read my beer!</h4>
+  <%= form_tag import_beers_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>

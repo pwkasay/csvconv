@@ -1,0 +1,95 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_number: MyString
+  sku: MyString
+  item_product: MyString
+  item_label: MyString
+  ite_upc: MyString
+  item_quantity: 1.5
+  item_price: 1.5
+  discount_percentage: 1
+  tax_rate: 1
+  item_position: 1
+  packed_date: 2017-11-04 16:39:30
+  shipped_date: 2017-11-04 16:39:30
+  currency: MyString
+  warehouse: MyString
+  assignee: MyString
+  notes: MyString
+  email: MyString
+  contact_name: MyString
+  company_name: MyString
+  company_code: MyString
+  tax_number: MyString
+  fax: MyString
+  shipping_address_name: MyString
+  shipping_address_company_name: MyString
+  shipping_address_line_1: MyString
+  shipping_address_line_2: MyString
+  shipping_address_suburb: MyString
+  shipping_address_city: MyString
+  shipping_address_state: MyString
+  shipping_address_country: MyString
+  shipping_address_zipcode: MyString
+  shipping_address_email: MyString
+  shipping_address_phone_number: MyString
+  billing_address_name: MyString
+  billing_address_company_name: MyString
+  billing_address_line_1: MyString
+  billing_address_line_2: MyString
+  billing_address_suburb: MyString
+  billing_address_city: MyString
+  billing_address_state: MyString
+  billing_address_country: MyString
+  billing_address_zipcode: MyString
+  billing_address_email: MyString
+  billing_address_phone_number: MyString
+  order_reference: MyString
+
+two:
+  order_number: MyString
+  sku: MyString
+  item_product: MyString
+  item_label: MyString
+  ite_upc: MyString
+  item_quantity: 1.5
+  item_price: 1.5
+  discount_percentage: 1
+  tax_rate: 1
+  item_position: 1
+  packed_date: 2017-11-04 16:39:30
+  shipped_date: 2017-11-04 16:39:30
+  currency: MyString
+  warehouse: MyString
+  assignee: MyString
+  notes: MyString
+  email: MyString
+  contact_name: MyString
+  company_name: MyString
+  company_code: MyString
+  tax_number: MyString
+  fax: MyString
+  shipping_address_name: MyString
+  shipping_address_company_name: MyString
+  shipping_address_line_1: MyString
+  shipping_address_line_2: MyString
+  shipping_address_suburb: MyString
+  shipping_address_city: MyString
+  shipping_address_state: MyString
+  shipping_address_country: MyString
+  shipping_address_zipcode: MyString
+  shipping_address_email: MyString
+  shipping_address_phone_number: MyString
+  billing_address_name: MyString
+  billing_address_company_name: MyString
+  billing_address_line_1: MyString
+  billing_address_line_2: MyString
+  billing_address_suburb: MyString
+  billing_address_city: MyString
+  billing_address_state: MyString
+  billing_address_country: MyString
+  billing_address_zipcode: MyString
+  billing_address_email: MyString
+  billing_address_phone_number: MyString
+  order_reference: MyString
