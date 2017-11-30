@@ -9,11 +9,9 @@ class BeersController < ApplicationController
   end
 
   def stevie
-    csv_string = CSV.generate do |csv|
-      # CHANGE THIS TO ACTUALLY GENERATE THE CSV YOU WANT
-      csv << ["Stevie-header", "Ray-header"]
-      csv << ["Paul-value", "Kasay-value"]
-    end
-    send_data csv_string, filename: "stevie-#{Time.now.to_i}.csv"
+    csv_string = BeerConverter.convert(file: params[:file])
+    # get original filename without extension
+    filename = File.basename(params[:file].original_filename, ".*")
+    send_data csv_string, filename: "#{filename}-export-#{Time.now.to_i}.csv"
   end
 end
