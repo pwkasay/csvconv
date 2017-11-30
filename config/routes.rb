@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
   get 'beers/index'
 
-  get 'beers/import'
-
-  get 'main/index'
-
-  resources :beers do
-    collection {post :import}
+  resources :beers, only: :index do
+    collection do
+      post :import
+      post :stevie
+    end
   end
 
   root to: "beers#index"
-
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
