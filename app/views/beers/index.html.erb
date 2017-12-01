@@ -118,3 +118,11 @@
     <%= submit_tag "Import CSV" %>
   <% end %>
 </div>
+
+<div>
+<h4>Stevie my beer!</h4>
+  <%= form_tag stevie_beers_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
