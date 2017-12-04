@@ -14,14 +14,14 @@ class BeerConverter
       unless row.blank?
 
         #row_labels
-        item_name = row[4]
-        item_quantity = row[7]
-        price_d = row[10]
+        item_name = row[2]
+        item_quantity = row[6]
+        price_d = row[9]
         country = row[31]
-        price_i = row[8]
-        zip_code = row[32]
+        price_i = row[7]
+        zip_code = row[33]
         order_id = row[0]
-        tax_rate = row[11]
+        tax_rate = row[10]
 
         unless i == 0
           unless item_name.blank?
