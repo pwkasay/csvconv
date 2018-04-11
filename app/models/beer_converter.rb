@@ -15,13 +15,13 @@ class BeerConverter
 
         #row_labels
         item_name = row[3]
-        item_quantity = row[7]
-        price_d = row[10]
-        price_i = row[8]
+        item_quantity = row[6]
+        price_d = row[9]
+        price_i = row[7]
         country = row[31]
         zip_code = row[32]
         order_id = row[0]
-        tax_rate = row[11]
+        tax_rate = row[10]
 
         unless i == 0
           unless item_name.blank?
