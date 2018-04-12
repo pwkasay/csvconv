@@ -47,6 +47,7 @@ class BeerConverter
                   exportk20L: (BigDecimal.new(item_quantity) if ((item_name.include? "20L") && ((!uk.include? country) && (!country.blank?)))).to_f,
                   ukx330ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[24x330ml]") && ((uk.include? country) || (country.blank?)))).to_f,
                   ukx750ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[12x750ml]") && (uk.include? country || country.blank?))).to_f,
+                  ukx500ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[12x500ml]") && (uk.include? country || country.blank?))).to_f,
                   ukk30L: (BigDecimal.new(item_quantity) if ((item_name.include? "30L") && ((uk.include? country) || country.blank?))).to_f,
                   ukk20L: (BigDecimal.new(item_quantity) if ((item_name.include? "20L") && (uk.include? country || country.blank?))).to_f
                 },
@@ -130,7 +131,6 @@ class BeerConverter
           stats[:totals][:ukk30L],
           stats[:totals][:ukk20L],
           "",
-          ((stats[:totals][:exportx500ml].to_f)*0.06)
           ((((stats[:totals][:exportx330ml].to_f)*0.0792)+((stats[:totals][:exportx750ml].to_f)*0.09)+((stats[:totals][:exportx500ml].to_f)*0.06)+((stats[:totals][:exportk30L].to_f)*0.29)+((stats[:totals][:exportk20L].to_f)*0.19)).to_f).round(2),
           (((((stats[:totals][:exportx330ml].to_f)*0.0792)+((stats[:totals][:exportx750ml].to_f)*0.09)+((stats[:totals][:exportx500ml].to_f)*0.06)+((stats[:totals][:exportk30L].to_f)*0.29)+((stats[:totals][:exportk20L].to_f)*0.19))*((stats[:info][:abv]).to_f)).to_f).round(2),
           ((((stats[:totals][:ukx330ml].to_f)*0.0792)+((stats[:totals][:ukx750ml].to_f)*0.09)+((stats[:totals][:ukx500ml].to_f)*0.06)+((stats[:totals][:ukk30L].to_f)*0.29)+((stats[:totals][:ukk20L].to_f)*0.19)).to_f).round(2),
