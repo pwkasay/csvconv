@@ -14,14 +14,14 @@ class BeerConverter
       unless row.blank?
 
         #row_labels
+        order_id = row[0]
         item_name = row[3]
         item_quantity = row[6]
-        price_d = row[9]
         price_i = row[7]
+        price_d = row[9]
+        tax_rate = row[10]
         country = row[31]
         zip_code = row[32]
-        order_id = row[0]
-        tax_rate = row[10]
 
         unless i == 0
           unless item_name.blank?
@@ -38,19 +38,19 @@ class BeerConverter
                   x330ml: (BigDecimal.new(item_quantity) if item_name.include? "[24x330ml]").to_f,
                   x750ml: (BigDecimal.new(item_quantity) if item_name.include? "[12x750ml]").to_f,
                   x500ml: (BigDecimal.new(item_quantity) if item_name.include? "[12x500ml]").to_f,
-                  x440ml: (BigDecimal.new(item_quantity) if item_name.include? "[12x440ml]").to_f,
+                  x440ml: (BigDecimal.new(item_quantity) if item_name.include? "[24x440ml]").to_f,
                   k30L: (BigDecimal.new(item_quantity) if item_name.include? "30L").to_f,
                   k20L: (BigDecimal.new(item_quantity) if item_name.include? "20L").to_f,
                   exportx330ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[24x330ml]") && ((!uk.include? country) && (!country.blank?)))).to_f,
                   exportx750ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[12x750ml]") && ((!uk.include? country) && (!country.blank?)))).to_f,
                   exportx500ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[12x500ml]") && ((!uk.include? country) && (!country.blank?)))).to_f,
-                  exportx440ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[12x440ml]") && ((!uk.include? country) && (!country.blank?)))).to_f,
+                  exportx440ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[24x440ml]") && ((!uk.include? country) && (!country.blank?)))).to_f,
                   exportk30L: (BigDecimal.new(item_quantity) if ((item_name.include? "30L") && ((!uk.include? country) && (!country.blank?)))).to_f,
                   exportk20L: (BigDecimal.new(item_quantity) if ((item_name.include? "20L") && ((!uk.include? country) && (!country.blank?)))).to_f,
                   ukx330ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[24x330ml]") && ((uk.include? country) || (country.blank?)))).to_f,
                   ukx750ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[12x750ml]") && (uk.include? country || country.blank?))).to_f,
                   ukx500ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[12x500ml]") && (uk.include? country || country.blank?))).to_f,
-                  ukx440ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[12x440ml]") && (uk.include? country || country.blank?))).to_f,
+                  ukx440ml: (BigDecimal.new(item_quantity) if ((item_name.include? "[24x440ml]") && (uk.include? country || country.blank?))).to_f,
                   ukk30L: (BigDecimal.new(item_quantity) if ((item_name.include? "30L") && ((uk.include? country) || country.blank?))).to_f,
                   ukk20L: (BigDecimal.new(item_quantity) if ((item_name.include? "20L") && (uk.include? country || country.blank?))).to_f
                 },
@@ -65,7 +65,7 @@ class BeerConverter
                     x330ml: (BigDecimal.new(item_quantity) if item_name.include? "[24x330ml]"),
                     x750ml: (BigDecimal.new(item_quantity) if item_name.include? "[12x750ml]"),
                     x500ml: (BigDecimal.new(item_quantity) if item_name.include? "[12x500ml]"),
-                    x440ml: (BigDecimal.new(item_quantity) if item_name.include? "[12x440ml]"),
+                    x440ml: (BigDecimal.new(item_quantity) if item_name.include? "[24x440ml]"),
                     k30L: (BigDecimal.new(item_quantity) if item_name.include? "30L"),
                     k20L: (BigDecimal.new(item_quantity) if item_name.include? "20L")
                   }
@@ -83,7 +83,7 @@ class BeerConverter
                   x330ml: (BigDecimal.new(item_quantity) if item_name.include? "[24x330ml]"),
                   x750ml: (BigDecimal.new(item_quantity) if item_name.include? "[12x750ml]"),
                   x500ml: (BigDecimal.new(item_quantity) if item_name.include? "[12x500ml]"),
-                  x440ml: (BigDecimal.new(item_quantity) if item_name.include? "[12x440ml]"),
+                  x440ml: (BigDecimal.new(item_quantity) if item_name.include? "[24x440ml]"),
                   k30L: (BigDecimal.new(item_quantity) if item_name.include? "30L"),
                   k20L: (BigDecimal.new(item_quantity) if item_name.include? "20L")
                 }
@@ -95,19 +95,19 @@ class BeerConverter
               catalogue[(item_name.match /.*%/).to_s][:totals][:x330ml] += (BigDecimal.new(item_quantity) if item_name.include? "[24x330ml]").to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:x750ml] += (BigDecimal.new(item_quantity) if item_name.include? "[12x750ml]").to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:x500ml] += (BigDecimal.new(item_quantity) if item_name.include? "[12x500ml]").to_f
-              catalogue[(item_name.match /.*%/).to_s][:totals][:x440ml] += (BigDecimal.new(item_quantity) if item_name.include? "[12x440ml]").to_f
+              catalogue[(item_name.match /.*%/).to_s][:totals][:x440ml] += (BigDecimal.new(item_quantity) if item_name.include? "[24x440ml]").to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:k30L] += (BigDecimal.new(item_quantity) if item_name.include? "30L").to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:k20L] += (BigDecimal.new(item_quantity) if item_name.include? "20L").to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:exportx330ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[24x330ml]") && ((!uk.include? country) && (!country.blank?)))).to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:exportx750ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[12x750ml]") && ((!uk.include? country) && (!country.blank?)))).to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:exportx500ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[12x500ml]") && ((!uk.include? country) && (!country.blank?)))).to_f
-              catalogue[(item_name.match /.*%/).to_s][:totals][:exportx440ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[12x440ml]") && ((!uk.include? country) && (!country.blank?)))).to_f
+              catalogue[(item_name.match /.*%/).to_s][:totals][:exportx440ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[24x440ml]") && ((!uk.include? country) && (!country.blank?)))).to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:exportk30L] += (BigDecimal.new(item_quantity) if ((item_name.include? "30L") && ((!uk.include? country) && (!country.blank?)))).to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:exportk20L] += (BigDecimal.new(item_quantity) if ((item_name.include? "20L") && ((!uk.include? country) && (!country.blank?)))).to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:ukx330ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[24x330ml]") && ((uk.include? country) || (country.blank?)))).to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:ukx750ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[12x750ml]") && ((uk.include? country) || (country.blank?)))).to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:ukx500ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[12x500ml]") && ((uk.include? country) || (country.blank?)))).to_f
-              catalogue[(item_name.match /.*%/).to_s][:totals][:ukx440ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[12x440ml]") && ((uk.include? country) || (country.blank?)))).to_f
+              catalogue[(item_name.match /.*%/).to_s][:totals][:ukx440ml] += (BigDecimal.new(item_quantity) if ((item_name.include? "[24x440ml]") && ((uk.include? country) || (country.blank?)))).to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:ukk30L] += (BigDecimal.new(item_quantity) if ((item_name.include? "30L") && ((uk.include? country) || (country.blank?)))).to_f
               catalogue[(item_name.match /.*%/).to_s][:totals][:ukk20L] += (BigDecimal.new(item_quantity) if ((item_name.include? "20L") && ((uk.include? country) || (country.blank?)))).to_f
             end
